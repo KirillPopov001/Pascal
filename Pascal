@@ -1,0 +1,27 @@
+class Pascal:
+
+    def __init__(self, file):
+        self.file = file
+
+    def __getitem__(self, item):
+
+        if item >= 1 and item <= len(self.file):
+            return self.file[item - 1]
+
+
+
+    def __setitem__(self, key, value):
+
+        if key >= 1 and key <= len(self.file):
+            self.file = self.file.replace(self.file[key-1], value)
+
+
+    def __str__(self):
+        return self.file
+
+
+a = Pascal("Привет")
+print(a)
+a[1] = "F"
+print(a)
+print(a[3])
